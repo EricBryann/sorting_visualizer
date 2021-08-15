@@ -12,7 +12,7 @@ function App() {
   const [algoChoice, setAlgoChoice] = useState("bubbleSort");
   const [arrayValues, setArrayValues] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
-  const [arrayLength, setArrayLength] = useState(22);
+  const [arrayLength, setArrayLength] = useState(6);
 
   useEffect(() => {
     removeAllSortedBarColors(arrayValues.length);
