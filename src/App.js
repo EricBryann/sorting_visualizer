@@ -4,22 +4,22 @@ import Header from "./components/header/Header";
 import bubbleSort from "./algorithms/bubble-sort/bubbleSort";
 import selectionSort from "./algorithms/selection-sort/selectionSort";
 import insertionSort from "./algorithms/insertion-sort/insertionSort";
+import mergeSort from "./algorithms/merge-sort/mergeSort";
+import quickSort from "./algorithms/quick-sort/quickSort";
 import { removeAllSortedBarColors } from "./shared/barColors";
 
 function App() {
   const [algoChoice, setAlgoChoice] = useState("bubbleSort");
-  const [arrayValues, setArrayValues] = useState([
-    80, 70, 60, 50, 40, 30, 20, 10,
-  ]);
+  const [arrayValues, setArrayValues] = useState([]);
 
-  // useEffect(() => {
-  //   removeAllSortedBarColors(arrayValues.length);
-  //   const array = [];
-  //   for (let i = 0; i < 8; i++) {
-  //     array.push(Math.floor(Math.random() * 71));
-  //   }
-  //   setArrayValues(array);
-  // }, []);
+  useEffect(() => {
+    removeAllSortedBarColors(arrayValues.length);
+    const array = [];
+    for (let i = 0; i < 8; i++) {
+      array.push(Math.floor(Math.random() * 71));
+    }
+    setArrayValues(array);
+  }, []);
 
   const visualizeAlgo = () => {
     switch (algoChoice) {
@@ -29,6 +29,12 @@ function App() {
         return selectionSort(arrayValues, setArrayValues);
       case "insertionSort":
         return insertionSort(arrayValues, setArrayValues);
+      case "mergeSort":
+        return mergeSort(arrayValues, setArrayValues);
+      case "quickSort":
+        return quickSort(arrayValues, setArrayValues);
+      default:
+        return;
     }
   };
 

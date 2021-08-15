@@ -21,7 +21,7 @@ export default async function insertionSort(arrayValues, setArrayValues) {
       temp = new Array(...temp);
       setArrayValues(temp);
       await delay(300);
-      if (j != i) {
+      if (j !== i) {
         removeVisitingColor(j);
         await delay(300);
       }
