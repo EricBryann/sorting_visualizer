@@ -3,6 +3,7 @@ import {
   removeVisitingColor,
   addSortedBarColor,
   removeAllSortedBarColors,
+  addAllSortedBarColors,
 } from "../../shared/barColors";
 import { delay } from "../../shared/delay";
 import { swap } from "../../shared/swap";

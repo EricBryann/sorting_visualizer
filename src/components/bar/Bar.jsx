@@ -44,6 +44,7 @@ export default function Bar({ values }) {
               }}
             ></div>
           </div>
+          <p>{value}</p>
         </div>
       ))}
     </div>

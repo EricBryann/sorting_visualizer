@@ -40,3 +40,12 @@ export const removeAllSortedBarColors = (len) => {
         [i].classList.remove("sorted");
     }
 };
+
+export const addAllSortedBarColors = (len) => {
+  for (let index = 0; index < len; index++)
+    for (let i = 0; i < 5; i++) {
+      document
+        .getElementsByClassName(`add-color-${index}`)
+        [i].classList.add("sorted");
+    }
+};
