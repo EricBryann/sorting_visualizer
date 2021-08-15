@@ -48,8 +48,6 @@ export default function Bar({ values }) {
             style={{
               display: "flex",
               justifyContent: "center",
-              //   textAlign: "center",
-              //   alignContent: "center",
               color: "black",
               position: "relative",
             }}

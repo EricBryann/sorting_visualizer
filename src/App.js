@@ -11,37 +11,56 @@ import { removeAllSortedBarColors } from "./shared/barColors";
 function App() {
   const [algoChoice, setAlgoChoice] = useState("bubbleSort");
   const [arrayValues, setArrayValues] = useState([]);
+  const [isRunning, setIsRunning] = useState(false);
+  const [arrayLength, setArrayLength] = useState(22);
 
   useEffect(() => {
     removeAllSortedBarColors(arrayValues.length);
     const array = [];
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < arrayLength; i++) {
       array.push(Math.floor(Math.random() * 71));
     }
     setArrayValues(array);
   }, [algoChoice]);
 
-  const visualizeAlgo = () => {
+  const visualizeAlgo = async () => {
+    if (isRunning) return;
     switch (algoChoice) {
       case "bubbleSort":
-        return bubbleSort(arrayValues, setArrayValues);
+        setIsRunning(true);
+        await bubbleSort(arrayValues, setArrayValues);
+        setIsRunning(false);
+        break;
       case "selectionSort":
-        return selectionSort(arrayValues, setArrayValues);
+        setIsRunning(true);
+        await selectionSort(arrayValues, setArrayValues);
+        setIsRunning(false);
+        break;
       case "insertionSort":
-        return insertionSort(arrayValues, setArrayValues);
+        setIsRunning(true);
+        await insertionSort(arrayValues, setArrayValues);
+        setIsRunning(false);
+        break;
       case "mergeSort":
-        return mergeSort(arrayValues, setArrayValues);
+        setIsRunning(true);
+        await mergeSort(arrayValues, setArrayValues);
+        setIsRunning(false);
+        break;
       case "quickSort":
-        return quickSort(arrayValues, setArrayValues);
+        setIsRunning(true);
+        await quickSort(arrayValues, setArrayValues);
+        setIsRunning(false);
+        break;
       default:
         return;
     }
   };
 
   const generateNewArray = () => {
+    if (isRunning) return;
     removeAllSortedBarColors(arrayValues.length);
     const array = [];
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < arrayLength; i++) {
       array.push(Math.floor(Math.random() * 71));
     }
     setArrayValues(array);

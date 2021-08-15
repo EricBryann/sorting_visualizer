@@ -7,9 +7,9 @@
 }
 
 .bar {
-  width: 4vw;
+  width: 2.5vw;
   height: 70vh;
-  margin: 2% 2%;
+  margin: 2% 1%;
   transform-style: preserve-3d;
   transform: rotateX(-30deg) rotateY(-30deg);
   background-color: rgba(254, 254, 254, 0.25);
@@ -23,7 +23,7 @@
 }
 
 .back {
-  transform: translateZ(-4vw);
+  transform: translateZ(-2.5vw);
 }
 
 .left {
@@ -37,14 +37,14 @@
 }
 
 .top {
-  height: 4vw;
+  height: 2.5vw;
   transform-origin: top;
   transform: rotateX(-90deg);
   background-color: rgba(254, 254, 254, 0.15);
 }
 
 .bottom {
-  height: 4vw;
+  height: 2.5vw;
   transform-origin: top;
   transform: translateY(70vh) rotateX(-90deg);
   background-color: rgba(0, 191, 225, 0.5);
