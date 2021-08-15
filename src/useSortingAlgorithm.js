@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import bubbleSort from "./algorithms/bubble-sort/bubbleSort";
 import selectionSort from "./algorithms/selection-sort/selectionSort";
 import insertionSort from "./algorithms/insertion-sort/insertionSort";
@@ -14,7 +14,7 @@ export default function useSortingAlgorithm() {
   const [speed, setSpeed] = useState(5);
 
   useEffect(() => {
-    removeAllSortedBarColors(arrayValues.length);
+    removeAllSortedBarColors(arrayLength);
     const array = [];
     for (let i = 0; i < arrayLength; i++) {
       array.push(Math.floor(Math.random() * 61));
