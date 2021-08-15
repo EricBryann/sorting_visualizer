@@ -6,24 +6,29 @@ import {
 } from "../../shared/barColors";
 import { delay } from "../../shared/delay";
 
-export default async function insertionSort(arrayValues, setArrayValues) {
+export default async function insertionSort(
+  arrayValues,
+  setArrayValues,
+  speed
+) {
+  const time = Math.floor(2000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let temp = new Array(...arrayValues);
   for (let i = 1; i < arrayValues.length; i++) {
     let j = i;
     const current = temp[i];
     addVisitingColor(i);
-    await delay(300);
+    await delay(time);
     while (j > 0 && current < temp[j - 1]) {
       addVisitingColor(j);
-      await delay(300);
+      await delay(time);
       temp[j] = temp[j - 1];
       temp = new Array(...temp);
       setArrayValues(temp);
-      await delay(300);
+      await delay(time);
       if (j !== i) {
         removeVisitingColor(j);
-        await delay(300);
+        await delay(time);
       }
       j--;
     }
@@ -31,7 +36,7 @@ export default async function insertionSort(arrayValues, setArrayValues) {
     temp[j] = current;
     temp = new Array(...temp);
     setArrayValues(temp);
-    await delay(300);
+    await delay(time);
     removeVisitingColor(i);
   }
 

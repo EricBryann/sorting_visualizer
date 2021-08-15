@@ -6,7 +6,7 @@ import {
 } from "../../shared/barColors";
 import { delay } from "../../shared/delay";
 
-const merge = async (array, start, mid, end, setArrayValues) => {
+const merge = async (array, start, mid, end, setArrayValues, time) => {
   let temp = [];
   let i = start;
   let j = mid + 1;
@@ -35,26 +35,27 @@ const merge = async (array, start, mid, end, setArrayValues) => {
     array[i] = temp[i - start];
     const temp2 = new Array(...array);
     setArrayValues(temp2);
-    await delay(200);
+    await delay(time);
   }
   for (let i = start; i <= end; i++) {
     removeVisitingColor(i);
   }
 };
 
-const mergeSortHelper = async (array, start, end, setArrayValues) => {
+const mergeSortHelper = async (array, start, end, setArrayValues, time) => {
   if (start >= end) return;
   const mid = Math.floor((start + end) / 2);
-  await mergeSortHelper(array, start, mid, setArrayValues);
+  await mergeSortHelper(array, start, mid, setArrayValues, time);
 
-  await mergeSortHelper(array, mid + 1, end, setArrayValues);
+  await mergeSortHelper(array, mid + 1, end, setArrayValues, time);
 
-  await merge(array, start, mid, end, setArrayValues);
+  await merge(array, start, mid, end, setArrayValues, time);
 };
 
-export default async function mergeSort(arrayValues, setArrayValues) {
+export default async function mergeSort(arrayValues, setArrayValues, speed) {
+  const time = Math.floor(2000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let arr = new Array(...arrayValues);
-  await mergeSortHelper(arr, 0, arr.length - 1, setArrayValues);
+  await mergeSortHelper(arr, 0, arr.length - 1, setArrayValues, time);
   addAllSortedBarColors(arrayValues.length);
 }

@@ -7,7 +7,12 @@ import {
 import { delay } from "../../shared/delay";
 import { swap } from "../../shared/swap";
 
-export default async function selectionSort(arrayValues, setArrayValues) {
+export default async function selectionSort(
+  arrayValues,
+  setArrayValues,
+  speed
+) {
+  const time = Math.floor(2000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let temp = new Array(...arrayValues);
   for (let i = temp.length - 1; i >= 0; i--) {
@@ -22,7 +27,7 @@ export default async function selectionSort(arrayValues, setArrayValues) {
         await setArrayValues(temp);
       }
 
-      await delay(200);
+      await delay(time);
       removeVisitingColor(j);
     }
     swap(temp, i, max);

@@ -1,7 +1,6 @@
 .header-class {
   background-color: rgb(8, 68, 105);
   display: grid;
-  padding: 10px 0;
   border-bottom: 2px solid blueviolet;
 }
 .button-class {
@@ -25,7 +24,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .algo-label {
@@ -37,4 +36,22 @@
   width: 10rem;
   height: 30px;
   border-radius: 10px;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+}
+
+.slider-class {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 12px;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -7,7 +7,7 @@ import {
 import { delay } from "../../shared/delay";
 import { swap } from "../../shared/swap";
 
-const helper = async (array, start, end, setArrayValues) => {
+const helper = async (array, start, end, setArrayValues, time) => {
   if (start > end) return;
   let pivot = start;
   let left = start + 1;
@@ -17,7 +17,7 @@ const helper = async (array, start, end, setArrayValues) => {
   while (right >= left) {
     addVisitingColor(left);
     addVisitingColor(right);
-    await delay(200);
+    await delay(time);
     if (array[left] > array[pivot] && array[right] < array[pivot]) {
       swap(array, left, right);
       const temp = new Array(...array);
@@ -28,13 +28,13 @@ const helper = async (array, start, end, setArrayValues) => {
       removeVisitingColor(left);
       left++;
       if (left < array.length) addVisitingColor(left);
-      await delay(200);
+      await delay(time);
     }
     if (array[right] >= array[pivot]) {
       removeVisitingColor(right);
       right--;
       if (right > 0) addVisitingColor(right);
-      await delay(200);
+      await delay(time);
     }
 
     if (left < array.length) removeVisitingColor(left);
@@ -46,15 +46,16 @@ const helper = async (array, start, end, setArrayValues) => {
   addSortedBarColor(right);
   setArrayValues(temp);
   removeVisitingColor(pivot);
-  await delay(200);
+  await delay(time);
 
   await helper(array, start, right - 1, setArrayValues);
   await helper(array, right + 1, end, setArrayValues);
 };
 
-export default async function quickSort(arrayValues, setArrayValues) {
+export default async function quickSort(arrayValues, setArrayValues, speed) {
+  const time = Math.floor(2000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   const temp = new Array(...arrayValues);
-  await helper(temp, 0, arrayValues.length - 1, setArrayValues);
+  await helper(temp, 0, arrayValues.length - 1, setArrayValues, time);
   setArrayValues(temp);
 }
