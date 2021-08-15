@@ -7,7 +7,7 @@ export default function Bar({ values }) {
       {values.map((value, i) => (
         <div className="bar" key={i}>
           <div className="side top"></div>
-          <div className="side bottom"></div>
+          <div className={`side bottom add-color-${i}`}></div>
           <div className="side right">
             <div
               className={`color-bar add-color-${i}`}

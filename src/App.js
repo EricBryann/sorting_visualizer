@@ -16,7 +16,7 @@ function App() {
       case "bubbleSort":
         return bubbleSort(arrayValues, setArrayValues);
       case "selectionSort":
-        return selectionSort();
+        return selectionSort(arrayValues, setArrayValues);
       default:
         return console.log("hi");
     }

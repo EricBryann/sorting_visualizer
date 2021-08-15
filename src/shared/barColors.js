@@ -1,7 +1,7 @@
 import "./barColors.css";
 
 export const addVisitingColor = (index) => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     document
       .getElementsByClassName(`add-color-${index}`)
       [i].classList.add("visiting");
@@ -9,7 +9,7 @@ export const addVisitingColor = (index) => {
 };
 
 export const removeVisitingColor = (index) => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     document
       .getElementsByClassName(`add-color-${index}`)
       [i].classList.remove("visiting");
@@ -17,7 +17,7 @@ export const removeVisitingColor = (index) => {
 };
 
 export const addSortedBarColor = (index) => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     document
       .getElementsByClassName(`add-color-${index}`)
       [i].classList.add("sorted");
@@ -25,7 +25,7 @@ export const addSortedBarColor = (index) => {
 };
 
 export const removeSortedBarColor = (index) => {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     document
       .getElementsByClassName(`add-color-${index}`)
       [i].classList.remove("sorted");
@@ -34,7 +34,7 @@ export const removeSortedBarColor = (index) => {
 
 export const removeAllSortedBarColors = (len) => {
   for (let index = 0; index < len; index++)
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       document
         .getElementsByClassName(`add-color-${index}`)
         [i].classList.remove("sorted");

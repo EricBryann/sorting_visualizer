@@ -1,4 +1,3 @@
-import "./sth.css";
 import {
   addVisitingColor,
   removeVisitingColor,
@@ -6,6 +5,7 @@ import {
   removeAllSortedBarColors,
 } from "../../shared/barColors";
 import { delay } from "../../shared/delay";
+import { swap } from "../../shared/swap";
 
 export default async function bubbleSort(arrayValues, setArrayValues) {
   removeAllSortedBarColors(arrayValues.length);
@@ -16,13 +16,11 @@ export default async function bubbleSort(arrayValues, setArrayValues) {
       addVisitingColor(j);
       addVisitingColor(j + 1);
       if (temp[j] > temp[j + 1]) {
-        const x = temp[j];
-        temp[j] = temp[j + 1];
-        temp[j + 1] = x;
+        swap(temp, j, j + 1);
         await setArrayValues(temp);
       }
 
-      await delay(300);
+      await delay(200);
       removeVisitingColor(j);
       removeVisitingColor(j + 1);
     }
