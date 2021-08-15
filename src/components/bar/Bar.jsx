@@ -44,7 +44,18 @@ export default function Bar({ values }) {
               }}
             ></div>
           </div>
-          <p>{value}</p>
+          <p
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              //   textAlign: "center",
+              //   alignContent: "center",
+              color: "black",
+              position: "relative",
+            }}
+          >
+            {value}
+          </p>
         </div>
       ))}
     </div>

@@ -22,7 +22,6 @@ const helper = async (array, start, end, setArrayValues) => {
       swap(array, left, right);
       const temp = new Array(...array);
       setArrayValues(temp);
-      await delay(200);
     }
 
     if (array[left] <= array[pivot]) {
