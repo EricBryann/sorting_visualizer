@@ -19,7 +19,7 @@ function App() {
       array.push(Math.floor(Math.random() * 71));
     }
     setArrayValues(array);
-  }, []);
+  }, [algoChoice]);
 
   const visualizeAlgo = () => {
     switch (algoChoice) {
