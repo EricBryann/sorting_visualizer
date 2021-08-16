@@ -13,7 +13,7 @@ export default function Bar({ values }) {
               className={`color-bar add-color-${i}`}
               style={{
                 height: `${value}vh`,
-                transform: `translateY(${60 - value}vh)`,
+                transform: `translateY(${80 - value}vh)`,
               }}
             ></div>
           </div>
@@ -22,7 +22,7 @@ export default function Bar({ values }) {
               className={`color-bar add-color-${i}`}
               style={{
                 height: `${value}vh`,
-                transform: `translateY(${60 - value}vh)`,
+                transform: `translateY(${80 - value}vh)`,
               }}
             ></div>
           </div>
@@ -31,7 +31,7 @@ export default function Bar({ values }) {
               className={`color-bar add-color-${i}`}
               style={{
                 height: `${value}vh`,
-                transform: `translateY(${60 - value}vh)`,
+                transform: `translateY(${80 - value}vh)`,
               }}
             ></div>
           </div>
@@ -40,7 +40,7 @@ export default function Bar({ values }) {
               className={`color-bar add-color-${i}`}
               style={{
                 height: `${value}vh`,
-                transform: `translateY(${60 - value}vh)`,
+                transform: `translateY(${80 - value}vh)`,
               }}
             ></div>
           </div>

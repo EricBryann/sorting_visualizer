@@ -48,8 +48,8 @@ const helper = async (array, start, end, setArrayValues, time) => {
   removeVisitingColor(pivot);
   await delay(time);
 
-  await helper(array, start, right - 1, setArrayValues);
-  await helper(array, right + 1, end, setArrayValues);
+  await helper(array, start, right - 1, setArrayValues, time);
+  await helper(array, right + 1, end, setArrayValues, time);
 };
 
 export default async function quickSort(arrayValues, setArrayValues, speed) {

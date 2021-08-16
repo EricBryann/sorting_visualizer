@@ -14,13 +14,13 @@ export default function useSortingAlgorithm() {
   const [speed, setSpeed] = useState(5);
 
   useEffect(() => {
-    removeAllSortedBarColors(arrayLength);
+    removeAllSortedBarColors(arrayValues.length);
     const array = [];
     for (let i = 0; i < arrayLength; i++) {
-      array.push(Math.floor(Math.random() * 61));
+      array.push(Math.floor(Math.random() * 81));
     }
     setArrayValues(array);
-  }, [algoChoice, arrayLength]);
+  }, [algoChoice, arrayLength, arrayValues.length]);
 
   const visualizeAlgo = async () => {
     if (isRunning) return;
@@ -60,11 +60,12 @@ export default function useSortingAlgorithm() {
     removeAllSortedBarColors(arrayValues.length);
     const array = [];
     for (let i = 0; i < arrayLength; i++) {
-      array.push(Math.floor(Math.random() * 61));
+      array.push(Math.floor(Math.random() * 81));
     }
     setArrayValues(array);
   };
   return {
+    algoChoice,
     isRunning,
     setAlgoChoice,
     visualizeAlgo,
