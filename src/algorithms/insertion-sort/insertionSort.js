@@ -11,7 +11,7 @@ export default async function insertionSort(
   setArrayValues,
   speed
 ) {
-  const time = Math.floor(2000 / speed);
+  const time = Math.floor(1000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let temp = new Array(...arrayValues);
   for (let i = 1; i < arrayValues.length; i++) {

@@ -53,7 +53,7 @@ const helper = async (array, start, end, setArrayValues, time) => {
 };
 
 export default async function quickSort(arrayValues, setArrayValues, speed) {
-  const time = Math.floor(2000 / speed);
+  const time = Math.floor(1000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   const temp = new Array(...arrayValues);
   await helper(temp, 0, arrayValues.length - 1, setArrayValues, time);

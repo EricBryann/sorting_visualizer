@@ -10,8 +10,8 @@ export default function useSortingAlgorithm() {
   const [algoChoice, setAlgoChoice] = useState("bubbleSort");
   const [arrayValues, setArrayValues] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
-  const [arrayLength, setArrayLength] = useState(10);
-  const [speed, setSpeed] = useState(5);
+  const [arrayLength, setArrayLength] = useState(15);
+  const [speed, setSpeed] = useState(10);
 
   useEffect(() => {
     removeAllSortedBarColors(arrayValues.length);

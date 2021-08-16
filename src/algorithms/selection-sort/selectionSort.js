@@ -12,7 +12,7 @@ export default async function selectionSort(
   setArrayValues,
   speed
 ) {
-  const time = Math.floor(2000 / speed);
+  const time = Math.floor(1000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let temp = new Array(...arrayValues);
   for (let i = temp.length - 1; i >= 0; i--) {

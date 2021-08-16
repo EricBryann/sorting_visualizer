@@ -9,7 +9,7 @@ import { delay } from "../../shared/delay";
 import { swap } from "../../shared/swap";
 
 export default async function bubbleSort(arrayValues, setArrayValues, speed) {
-  const time = Math.floor(2000 / speed);
+  const time = Math.floor(1000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let temp = new Array(...arrayValues);
   let change = false;

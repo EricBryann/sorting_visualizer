@@ -14,7 +14,7 @@ export default function Slider({
         <input
           type="range"
           min="2"
-          max="22"
+          max="30"
           value={arrayLength}
           onChange={(e) => {
             if (isRunning) return;

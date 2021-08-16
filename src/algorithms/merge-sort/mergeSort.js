@@ -53,7 +53,7 @@ const mergeSortHelper = async (array, start, end, setArrayValues, time) => {
 };
 
 export default async function mergeSort(arrayValues, setArrayValues, speed) {
-  const time = Math.floor(2000 / speed);
+  const time = Math.floor(1000 / speed);
   removeAllSortedBarColors(arrayValues.length);
   let arr = new Array(...arrayValues);
   await mergeSortHelper(arr, 0, arr.length - 1, setArrayValues, time);
